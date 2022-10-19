@@ -1,0 +1,34 @@
+.goal {
+    width: 150px;
+    height: 200px;
+}
+
+.goal-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.goal-button {
+    border: 0;
+    background-color: transparent;
+}
+
+.goal-button:hover {
+    cursor: pointer;
+}
+
+.goal-button:first-of-type svg {
+    color: darkgreen;
+}
+
+.goal-button:first-of-type svg:hover {
+    color: forestgreen;
+}
+
+.goal-button:last-of-type svg {
+    color: darkred;
+}
+
+.goal-button:last-of-type svg:hover {
+    color: red;
+}

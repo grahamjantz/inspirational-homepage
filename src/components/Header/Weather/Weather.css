@@ -1,0 +1,7 @@
+.weather {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    padding: 0 1em;
+}

@@ -1,0 +1,13 @@
+.quote {
+    line-height: 1.5em;
+    padding: 1em 0;
+}
+
+.quote-heading {
+    font-weight: lighter;
+}
+
+.quote-author {
+    font-weight: lighter;
+    font-style: italic;
+}
