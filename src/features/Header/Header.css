@@ -1,5 +1,7 @@
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    text-shadow: 2px 2px 3px black;
 }
