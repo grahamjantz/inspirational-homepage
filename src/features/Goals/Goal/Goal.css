@@ -37,3 +37,9 @@
 .goal-button:last-of-type svg:hover {
     color: red;
 }
+
+.goal-text {
+    display: flex;
+    flex-wrap: wrap;
+    overflow:hidden;
+}

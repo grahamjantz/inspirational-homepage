@@ -67,3 +67,12 @@
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
+.scroll-buttons {
+  position: fixed;
+  top: 50vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2em;
+}

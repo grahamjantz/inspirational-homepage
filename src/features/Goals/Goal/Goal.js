@@ -24,7 +24,7 @@ const Goal = ({ goal }) => {
             <FaWindowClose size={25}/>
           </button>
         </div>
-        <p>{goal.text}</p>
+        <p className='goal-text'>{goal.text}</p>
     </div>
   )
 }

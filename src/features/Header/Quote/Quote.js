@@ -18,7 +18,6 @@ const Quote = () => {
     const getData = async () => {
       const res = await fetch(url)
       const data = await res.json()
-      console.log(data)
       setQuote(data.contents.quotes[0].quote)
       setAuthor(data.contents.quotes[0].author)
       return data
