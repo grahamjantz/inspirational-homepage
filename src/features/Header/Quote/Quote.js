@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './Quote.css'
 
+import { useDispatch, useSelector } from 'react-redux'
+import { addQuote, selectQuote } from './quoteSlice'
+
 const placeholderQuote = {
   quote: 'We cannot solve problems with the kind of thinking we employed when we came up with them.',
   author: 'Albert Einstein'
@@ -8,29 +11,39 @@ const placeholderQuote = {
 
 const Quote = () => {
 
-  const [quote, setQuote] = useState(placeholderQuote.quote)
-  const [author, setAuthor] =useState(placeholderQuote.author)
+  const dispatch = useDispatch()
 
-  useEffect(() => {    
+  useEffect(() => {
+    dispatch(addQuote(placeholderQuote))
+  })
 
-    const url = 'https://quotes.rest/qod/?category=inspire&language=en'
+  const quote = useSelector(selectQuote)
+
+  console.log(quote)
+
+  // const [quote, setQuote] = useState(placeholderQuote.quote)
+  // const [author, setAuthor] =useState(placeholderQuote.author)
+
+  // useEffect(() => {    
+
+  //   const url = 'https://quotes.rest/qod/?category=inspire&language=en'
     
-    const getData = async () => {
-      const res = await fetch(url)
-      const data = await res.json()
-      setQuote(data.contents.quotes[0].quote)
-      setAuthor(data.contents.quotes[0].author)
-      return data
-    }
+  //   const getData = async () => {
+  //     const res = await fetch(url)
+  //     const data = await res.json()
+  //     setQuote(data.contents.quotes[0].quote)
+  //     setAuthor(data.contents.quotes[0].author)
+  //     return data
+  //   }
 
-    getData();
-  }, [])
+  //   getData();
+  // }, [])
 
 
   return (
     <div className='quote panel'>
-        <h2 className='quote-heading'>{`'${quote}'`}</h2>
-        <h2 className='quote-author'> - {author}</h2>
+        <h2 className='quote-heading'>{`''`}</h2>
+        <h2 className='quote-author'> - </h2>
     </div>
   )
 }

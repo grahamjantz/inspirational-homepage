@@ -1,7 +1,7 @@
 import React from 'react'
 import './Goals.css'
 import Goal from './Goal/Goal'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { selectGoals } from './goalsSlice'
 
 const Goals = () => {

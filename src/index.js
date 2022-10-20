@@ -14,6 +14,10 @@ import './index.css';
 // store.dispatch({ type: 'goals/addGoal', payload: 'hi' })
 // unsubscribe()
 
+store.dispatch({type: 'quote/addQuote', payload: {quote: 'quote', author: 'author'}})
+
+console.log(store.getState())
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 

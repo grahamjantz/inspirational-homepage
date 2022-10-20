@@ -18,10 +18,10 @@ const StyledApp = styled.div`
   background-repeat: no-repeat;
   border-radius: 0;
 `;
+export const imageArray = [rainForest, lake, mountain, waterfall]
 
 function App() {
 
-  const imageArray = [rainForest, lake, mountain, waterfall]
 
   // const [imageArray, setImageArray] = useState([rainForest, lake, mountain, waterfall])
   const [currentImage, setCurrentImage] = useState(imageArray[0])

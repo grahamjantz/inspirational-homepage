@@ -1,13 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import rainForest from './rainForest.jpg'
+import { imageArray } from '../App'
 
-const initialState = [
-    {
-        src: {
-            landscape: rainForest
-        }
-    }
-]
+const initialState = imageArray
 
 export const imagesSlice = createSlice({
     name: 'images',
@@ -18,3 +13,4 @@ export const imagesSlice = createSlice({
         }
     }
 })
+
