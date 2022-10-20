@@ -5,18 +5,17 @@ import { store } from './app/store';
 import App from './App';
 import './index.css';
 
-console.log('initial store state', store.getState())
+// console.log('initial store state', store.getState())
 
-const unsubscribe = store.subscribe(() =>
-  console.log('State after dispatch: ', store.getState())
-)
+// const unsubscribe = store.subscribe(() =>
+//   console.log('State after dispatch: ', store.getState())
+// )
 
-store.dispatch({ type: 'goals/addGoal', payload: 'hi' })
+// store.dispatch({ type: 'goals/addGoal', payload: 'hi' })
+// unsubscribe()
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-
-unsubscribe()
 
 root.render(
   <React.StrictMode>

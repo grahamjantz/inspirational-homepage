@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import './NewGoal.css'
 
+import { useDispatch } from 'react-redux'
+import { addGoal } from '../Goals/goalsSlice'
+
 const NewGoal = () => {
+
+  const dispatch = useDispatch()
 
   const [text, setText] = useState('')
 
@@ -11,8 +16,10 @@ const NewGoal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(text)
-    setText('')
+    if (text !== '') {
+      dispatch(addGoal(text))
+      setText('')
+    }
   }
 
 

@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import goalsSliceReducer from '../features/Goals/goalsSlice';
 
 export const store = configureStore({
-  //remove this redundant function when begin working with the store
-  reducer: () => 0,
+  reducer: {
+    goals: goalsSliceReducer
+  }
 });

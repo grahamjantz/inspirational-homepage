@@ -1,42 +1,59 @@
+import { createSlice } from "@reduxjs/toolkit"
+
 const initialState = [
     {
       id: 0,
-      goal: 'code',
+      text: 'code',
       isComplete: true,
     },
     {
       id: 1,
-      goal: 'code more',
+      text: 'code more',
       isComplete: false,
     },
     {
       id: 2,
-      goal: 'code forever',
+      text: 'code forever',
       isComplete: false,
     },
   ]
 
-  const nextIdNum = () => {
-    const length = state.getState.length;
-    return length;
+  const generateId = (state) => {
+    if (state.length > 0) {
+      return state[state.length - 1].id + 1
+    }
+    return 0;
   }
 
-  export default goalsReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'goals/addGoal': {
-            return [
-                ...state, 
-                {
-                    id: nextIdNum(),
-                    goal: action.payload,
-                    isComplete: false
-                }
-            ]
+export const goalsSlice = createSlice({
+  name: 'goals',
+  initialState,
+  reducers: {
+    addGoal(state, action) {
+      return [...state, 
+        {
+          id: generateId(state),
+          text: action.payload,
+          isComplete: false
         }
-        case 'goals/removeGoal': {
-            return state.filter(todo => todo.id !== action.payload.id)
+      ]
+    },
+    removeGoal(state, action) {
+      return state.filter(goal => goal.id !== action.payload); 
+    },
+    toggleCompleted (state, action) {
+      state.map(goal => {
+        if (goal.id !== action.payload) {
+          return goal;
         }
-        default:
-            return state
+        return goal.isComplete = !goal.isComplete;
+      })
     }
   }
+})
+
+
+export const selectGoals = (state) => state.goals;
+
+export const { addGoal, removeGoal, toggleCompleted } = goalsSlice.actions;
+export default goalsSlice.reducer;

@@ -1,16 +1,12 @@
 import React from 'react'
 import './Goals.css'
 import Goal from './Goal/Goal'
-// import { useSelector } from 'react-redux'
-// import store from '../../store  '
-
-// const selectGoals = (state) => state.goals.map((goal) => goal.id)
-
-// const state = store.getState()
+import { useSelector, useDispatch } from 'react-redux'
+import { selectGoals } from './goalsSlice'
 
 const Goals = () => {
 
-  const goalsArray = []
+  const goalsArray = useSelector(selectGoals);
 
   return (
     <div className='goals panel'>
@@ -18,8 +14,7 @@ const Goals = () => {
           return (
             <Goal
               key={goal.id} 
-              goal={goal.goal}
-              isComplete={goal.isComplete}
+              goal={goal}
             />
           )
         })}
