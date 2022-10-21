@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import './Quote.css'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,9 +15,8 @@ const Quote = () => {
 
   useEffect(() => {
     dispatch(addQuote(placeholderQuote))
-    //  THIS DISPATCH IS WORKING PERFECTLY WITH THE API IT IS COMMENTED OUT NOW TO PREVENT HITTING THE CALL LIMIT ON THE API WHILE I FINISH THE REST OF THE APP. DELETE THIS COMMENT AND UNCOMMENT DISPATCH BELOW AFTER PROJECT IS DONE
-    //dispatch(fetchQuote())
-  }, [])
+    dispatch(fetchQuote())
+  }, [dispatch])
 
   const quote = useSelector(selectQuote)
 

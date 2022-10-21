@@ -1,6 +1,7 @@
 .goal {
-    width: 150px;
-    height: 200px;
+    width: 90%;
+    height: 150px;
+    padding: 0 0 0 1em;
 }
 
 .goal.complete {

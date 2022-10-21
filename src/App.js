@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './features/Header/Header'
 import NewGoal from './features/NewGoal/NewGoal'
@@ -22,6 +22,10 @@ const StyledApp = styled.div`
 
 export const imageArray = [
   {
+    image: '',
+    path: ''
+  },
+  {
     image: rainForest,
     path: './images/rainforest.jpg'
   },
@@ -41,25 +45,20 @@ export const imageArray = [
 
 function App() {
 
-
   const currentIndex = useSelector(selectCurrentIndex)
   const fetchedImageArray = useSelector(selectImageArray)
-
-  console.log(currentIndex)
-  console.log(fetchedImageArray[currentIndex].src)
-
+  
   const dispatch = useDispatch();
-
+  
   
   useEffect(() => {
     dispatch(fetchImages())
-  }, [])
+  }, [dispatch])
 
   return (
     <StyledApp 
-      className='background-image' 
-      style={{backgroundImage: `url('https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200')`}}
-      // style={{backgroundImage: `url(${!fetchedImageArray ? imageArray[currentIndex].image : fetchedImageArray[currentIndex].src.landscape})`}}
+      className='background-image'
+      style={{backgroundImage: `url(${fetchedImageArray[currentIndex].image === imageArray[currentIndex].image ? imageArray[currentIndex].image : fetchedImageArray[currentIndex].src.landscape})`}}
     >
       <div className='App'>
         <div className='scroll-buttons'>
