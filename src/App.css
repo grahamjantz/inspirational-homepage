@@ -69,7 +69,7 @@
 }
 
 .scroll-buttons {
-  position: fixed;
+  position: absolute;
   top: 5vh;
   width: 100vw;
   display: flex;
