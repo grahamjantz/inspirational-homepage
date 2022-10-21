@@ -1,7 +1,7 @@
 import React from 'react'
 import './Goal.css'
 import { FaWindowClose, FaCheckSquare} from "react-icons/fa";
-import { addGoal, removeGoal, toggleCompleted } from '../goalsSlice'
+import { removeGoal, toggleCompleted } from '../goalsSlice'
 import { useDispatch } from 'react-redux';
 
 const Goal = ({ goal }) => {
