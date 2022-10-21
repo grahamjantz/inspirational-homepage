@@ -14,7 +14,7 @@ export const fetchImages = createAsyncThunk(
         const client = createClient(key);
         const query = 'Nature';
         
-        client.photos.search({ query, per_page: 5 }).then(photos => photos.photos);
+        return client.photos.search({ query, per_page: 5 }).then(photos => photos.photos);
     }
 )
 
@@ -40,7 +40,6 @@ export const imagesSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchImages.fulfilled, (state,action) => {
-            console.log(action.payload)
             state.arr = action.payload
         })
         builder.addCase(fetchImages.rejected, (state) => {

@@ -45,7 +45,8 @@ function App() {
   const currentIndex = useSelector(selectCurrentIndex)
   const fetchedImageArray = useSelector(selectImageArray)
 
-  console.log(fetchedImageArray)
+  console.log(currentIndex)
+  console.log(fetchedImageArray[currentIndex].src)
 
   const dispatch = useDispatch();
 
@@ -57,13 +58,13 @@ function App() {
   return (
     <StyledApp 
       className='background-image' 
-      // style={{backgroundImage: `url(${fetchedImageArray[currentIndex].image})`}}
+      style={{backgroundImage: `url('https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200')`}}
       // style={{backgroundImage: `url(${!fetchedImageArray ? imageArray[currentIndex].image : fetchedImageArray[currentIndex].src.landscape})`}}
     >
       <div className='App'>
         <div className='scroll-buttons'>
-          <BiLeftArrow size={50} onClick={() => dispatch(scrollDownImage(imageArray))}/>
-          <BiRightArrow size={50} onClick={() => dispatch(scrollUpImage(imageArray))}/>
+          <BiLeftArrow size={50} onClick={() => dispatch(scrollDownImage(fetchedImageArray))}/>
+          <BiRightArrow size={50} onClick={() => dispatch(scrollUpImage(fetchedImageArray))}/>
         </div>
         <Header />
         <NewGoal />
