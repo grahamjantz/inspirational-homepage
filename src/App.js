@@ -59,8 +59,8 @@ function App() {
     >
       <div className='App'>
         <div className='scroll-buttons'>
-          <BiLeftArrow size={50} onClick={() => dispatch(scrollDownImage(fetchedImageArray))}/>
-          <BiRightArrow size={50} onClick={() => dispatch(scrollUpImage(fetchedImageArray))}/>
+          <BiLeftArrow className='arrow'onClick={() => dispatch(scrollDownImage(fetchedImageArray))}/>
+          <BiRightArrow className='arrow'onClick={() => dispatch(scrollUpImage(fetchedImageArray))}/>
         </div>
         <Header />
         <NewGoal />
