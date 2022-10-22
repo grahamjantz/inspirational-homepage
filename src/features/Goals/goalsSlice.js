@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = [
     {
       id: 0,
-      text: 'code',
+      text: 'Wake up',
       isComplete: true,
     },
     {
       id: 1,
-      text: 'code more',
+      text: 'Brush teeth',
       isComplete: false,
     },
     {
       id: 2,
-      text: 'code forever',
+      text: 'Eat breakfast',
       isComplete: false,
     },
   ]

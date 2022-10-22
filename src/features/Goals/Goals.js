@@ -10,6 +10,7 @@ const Goals = () => {
 
   return (
     <div className='goals panel'>
+      <h2>Notes:</h2>
         {goalsArray.map(goal => {
           return (
             <Goal

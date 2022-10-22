@@ -14,10 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { scrollUpImage, scrollDownImage, selectCurrentIndex, selectImageArray, fetchImages } from './images/imagesSlice';
 
 const StyledApp = styled.div`
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 0;
+  
 `;
 
 export const imageArray = [

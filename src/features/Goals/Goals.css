@@ -1,7 +1,8 @@
 .goals {
+    height: 400px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    /* grid-template-columns: repeat(4, auto); */
     gap: 1em;
+    overflow-y: scroll;
 }

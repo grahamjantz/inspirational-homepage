@@ -38,6 +38,14 @@
   color: white;
 } */
 
+.background-image {
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  min-height: 100vh;
+}
+
 .App {
   width: 100vw;
   height: fit-content;

@@ -15,13 +15,13 @@ const Goal = ({ goal }) => {
             className='goal-button'
             onClick={() => dispatch(toggleCompleted(goal.id))}
           >
-            <FaCheckSquare size={25}/>
+            <FaCheckSquare size={35} />
           </button>
           <button 
             className='goal-button'
             onClick={() => dispatch(removeGoal(goal.id))}
           >
-            <FaWindowClose size={25}/>
+            <FaWindowClose size={35}/>
           </button>
         </div>
         <p className='goal-text'>{goal.text}</p>
