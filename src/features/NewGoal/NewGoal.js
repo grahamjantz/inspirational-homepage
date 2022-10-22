@@ -32,7 +32,7 @@ const NewGoal = () => {
             type='text'
             value={text}
             onChange={handleChange}
-            placeholder='Enter Note'
+            placeholder='Enter Goal'
           />
           <input type='submit' className='goal-submit'/>
         </form>

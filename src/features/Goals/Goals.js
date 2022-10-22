@@ -15,7 +15,7 @@ const Goals = () => {
 
   return (
     <div className='goals panel'>
-      <h2>Notes:</h2>
+      <h2>Goals:</h2>
         {sortedGoalsArray.map(goal => {
           return (
             <Goal

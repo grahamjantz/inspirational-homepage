@@ -27,6 +27,10 @@
     font-size: 1em;
 }
 
+.goal-input::placeholder {
+    color: white;
+}
+
 .goal-input:focus {
     border: none;
 }
