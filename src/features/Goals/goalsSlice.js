@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = [
+const initialState = {
+  arr: [
     {
       id: 0,
       text: 'Wake up',
@@ -16,11 +17,13 @@ const initialState = [
       text: 'Eat breakfast',
       isComplete: false,
     },
-  ]
+  ],
+  completedCount: 1 
+}
 
   const generateId = (state) => {
-    if (state.length > 0) {
-      return state[state.length - 1].id + 1
+    if (state.arr.length > 0) {
+      return state.arr[state.arr.length - 1].id + 1
     }
     return 0;
   }
@@ -30,7 +33,7 @@ export const goalsSlice = createSlice({
   initialState,
   reducers: {
     addGoal(state, action) {
-      return [...state, 
+      state.arr = [...state.arr, 
         {
           id: generateId(state),
           text: action.payload,
@@ -39,21 +42,35 @@ export const goalsSlice = createSlice({
       ]
     },
     removeGoal(state, action) {
-      return state.filter(goal => goal.id !== action.payload); 
+      state.arr = state.arr.filter(goal => goal.id !== action.payload);
+      state.completedCount = 0
+      state.arr.map(goal => {
+        if (goal.isComplete === true) {
+          state.completedCount++
+        }
+        return 0
+      })
     },
     toggleCompleted (state, action) {
-      state.map(goal => {
+      state.arr.map(goal => {
         if (goal.id !== action.payload) {
           return goal;
+        } else if (goal.isComplete === false) {
+          state.completedCount++
+          return goal.isComplete = !goal.isComplete;
+        } else if (goal.isComplete === true) {
+          state.completedCount--
+          return goal.isComplete = !goal.isComplete
         }
-        return goal.isComplete = !goal.isComplete;
+        return 0
       })
     }
   }
 })
 
 
-export const selectGoals = (state) => state.goals;
+export const selectGoals = (state) => state.goals.arr;
+export const selectCompletedCount = (state) => state.goals.completedCount;
 
 export const { addGoal, removeGoal, toggleCompleted } = goalsSlice.actions;
 export default goalsSlice.reducer;

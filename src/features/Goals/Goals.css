@@ -6,3 +6,9 @@
     gap: 1em;
     overflow-y: scroll;
 }
+
+.completed-count {
+    align-self: center;
+    position: sticky;
+    bottom: 0.1em;
+}

@@ -4,7 +4,6 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    text-shadow: 2px 2px 3px black;
 }
 
 @media only screen and (min-width: 750px) {
