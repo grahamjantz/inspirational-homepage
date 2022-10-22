@@ -22,7 +22,7 @@ export const fetchLocation = createAsyncThunk(
     async ({latitude, longitude}) => {
         const key = 'c13240cc9d97776b23bfc1759282b13c';
 
-        const res = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${key}`)
+        const res = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${key}`)
         const data = await res.json()
         return data
     }

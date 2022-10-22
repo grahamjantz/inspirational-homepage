@@ -29,6 +29,14 @@ export const quoteSlice = createSlice({
             state.text = action.payload.contents.quotes[0].quote
             state.author = action.payload.contents.quotes[0].author
         })
+        builder.addCase(fetchQuote.pending, (state) => {
+            state.text = ''
+            state.author = ''
+        })
+        builder.addCase(fetchQuote.rejected, (state) => {
+            state.text = initialState.text
+            state.author = initialState.author
+        })
     }
 })
 

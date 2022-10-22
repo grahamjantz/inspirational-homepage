@@ -28,7 +28,7 @@ const Weather = () => {
   
   return (
     <div className='weather panel'>
-        <img src={`http://openweathermap.org/img/wn/${currentIcon}@2x.png`} alt=''/>
+        <img src={`https://openweathermap.org/img/wn/${currentIcon}@2x.png`} alt=''/>
         <div className='temp'>
           <p>{currentWeather}°C</p>
           <p>{currentLocation}</p>
